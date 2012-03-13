@@ -1,0 +1,13 @@
+*** Test Cases ***
+Run a Random Configuration
+    Choose a source media format
+    Choose a target media format 
+    Convert source to target format
+    Verify converted file contains text from source
+
+*** Variables ***
+@{format}  txt  pdf  doc  rtf  html
+
+*** Settings ***
+Library         RandomChooser
+Resource        random_keywords.txt

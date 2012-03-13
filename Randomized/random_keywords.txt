@@ -1,0 +1,15 @@
+*** Keywords ***
+Choose a source media format
+    [Documentation]  Choose one of the formats in @{format}
+    ${source} =  choose_a  @{format}
+    Set Test Variable  ${source}
+
+Choose a target media format
+    ${target} =  choose_a  @{format}
+    Set Test Variable  ${target}
+
+Convert source to target format
+    Log  Imagine if you had a file in ${source} format and could convert it to ${target}
+
+Verify converted file contains text from source
+    Log  Imagine you could extract the text from the source and converted file and compare them
