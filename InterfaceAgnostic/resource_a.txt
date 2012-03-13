@@ -1,0 +1,4 @@
+*** Keywords ***
+
+Do something in the system
+    Log  In file resource_a.txt
