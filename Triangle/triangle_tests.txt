@@ -1,0 +1,23 @@
+*** Settings ***
+Library          Selenium2Library
+Suite Setup      Open Browser  http://practice.agilistry.com/triangle
+Suite Teardown   Close Browser
+
+
+
+*** Test Cases ***
+Plain Text Format
+    Input Text  triangle_side1  5
+    Input Text  triangle_side2  5
+    Input Text  triangle_side3  5
+    Focus  triangle_side1
+    Element Should Contain  triangle_type  Equilateral
+    
+
+
+| Right Triangle | Input Text             | triangle_side1 | 3        |
+|                | Input Text             | triangle_side2 | 4        |
+|                | Input Text             | triangle_side3 | 5        |
+|                | Focus                  | triangle_side1 |          |
+|                | Element Should Contain | triangle_type  | Right    |
+    
