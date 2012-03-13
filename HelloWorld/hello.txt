@@ -16,12 +16,19 @@ Say Hello Splitting Test Data Lines
   Say Something  
   ...  Robot
   ...  Hello, World
+  
+Say Hello to a Crowd
+  Greet  Fred  Wilma  Pebbles  Barney  Betty  BamBam  
 
   
 *** Keywords ***
 
 Say Hello  [Arguments]  ${addressee}
   Log  Hello, ${addressee}
+
+Greet  [Arguments]  @{crowd}
+    :FOR  ${person}  in  @{crowd}
+    \    Say Hello  ${person}
 
 Tell ${addressee} I said Hello
   Log  Hello, ${addressee}
