@@ -1,0 +1,9 @@
+One of the strengths of Robot Framework is the ability to determine which resource file to use based on a command line parameter. This feature makes it possible to have a single set of test cases expressing expectations about business logic that is relevant for multiple interfaces.
+
+To see this in action, run the test in this suite with a variable defined at the command line to choose between resource_a and resource_b. For example:
+
+pybot --variable interface:a InterfaceAgnostic/
+
+OR
+
+pybot --variable interface:b InterfaceAgnostic/
