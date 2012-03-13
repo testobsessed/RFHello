@@ -1,3 +1,6 @@
+*** Variables ***
+@{format}  txt  pdf  doc  rtf  html
+
 *** Keywords ***
 Choose a source media format
     [Documentation]  Choose one of the formats in @{format}

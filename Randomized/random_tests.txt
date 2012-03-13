@@ -5,9 +5,6 @@ Run a Random Configuration
     Convert source to target format
     Verify converted file contains text from source
 
-*** Variables ***
-@{format}  txt  pdf  doc  rtf  html
-
 *** Settings ***
 Library         RandomChooser
 Resource        random_keywords.txt
