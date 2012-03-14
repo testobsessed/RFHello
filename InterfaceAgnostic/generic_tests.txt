@@ -1,7 +1,6 @@
 *** Test Cases ***
-
-General Business Logic Should Work with Any Interface
-    Do something in the system
+| General Business Logic Should Work with Any Interface
+| | Do something in the system
     
 *** Settings ***
-Resource  resource_${interface}.txt
+| Resource | resource_${interface}.txt

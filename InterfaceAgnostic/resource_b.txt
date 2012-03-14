@@ -1,4 +1,4 @@
 *** Keywords ***
-
-Do something in the system
-    Log  In file resource_b.txt
+| Do something in the system
+| | [Documentation] | Just log which resource file this came from
+| | Log             | In file resource_b.txt
