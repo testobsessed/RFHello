@@ -1,25 +1,11 @@
 *** Settings ***
-Library          Selenium2Library
-Suite Setup      Open Browser  http://practice.agilistry.com/triangle
-Suite Teardown   Close Browser
-Test Template    Triangle with sides should be of type
+| Resource      | triangle_keywords.txt
+| Test Template | Triangle with sides should be of type
 
 *** Test Cases ***
-
-All sides equal        5  5  5  Equilateral
-Two sides equal        4  4  5  Isosceles
-No sides equal         4  5  6  Scalene
-90 degree angle        3  4  5  Right
-Makes straight line    1  2  3  Degenerate
-Does not meet          1  3  6  Invalid
-    
-    
-*** Keywords ***
-
-Triangle with sides should be of type  [Arguments]  ${one}  ${two}  ${three}  ${triangle_type}
-    Input Text  triangle_side1  ${one}
-    Input Text  triangle_side2  ${two}
-    Input Text  triangle_side3  ${three}
-    Focus  triangle_side1
-    Element Should Contain  triangle_type  ${triangle_type}
-    
+| All sides equal      | 5 | 5 | 5 |  Equilateral
+| Two sides equal      | 4 | 4 | 5 | Isosceles
+| No sides equal       | 4 | 5 | 6 | Scalene
+| 90 degree angle      | 3 | 4 | 5 | Right
+| Makes straight line  | 1 | 2 | 3 | Degenerate
+| Does not meet        | 1 | 3 | 6 | Invalid    

@@ -1,0 +1,12 @@
+*** Settings ***
+| Library | Selenium2Library
+
+*** Keywords ***
+| Triangle with sides should be of type  
+|   | [Arguments] | ${one} | ${two} | ${three} | ${triangle_type}
+|   | [Documentation]  | Keyword takes 4 parameters (side1, side2, side3, and expected type). Designed for using as a test template.
+|   | Input Text             | triangle_side1 | ${one}
+|   | Input Text             | triangle_side2 | ${two}
+|   | Input Text             | triangle_side3 | ${three}
+|   | Focus                  | triangle_side1
+|   | Element Should Contain | triangle_type | ${triangle_type}
