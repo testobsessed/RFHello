@@ -1,38 +1,36 @@
 *** Test Cases ***
+| Say Hello, World
+| | Log | Hello, World
 
-Say Hello, World
-  Log  Hello, World
+| Say Hello, Neighbor
+| | Log | Hello, Neighbor
 
-Say Hello Fred
-  Log  Hello, Fred
+| Say Hello with Embedded Arguments
+| | Tell Barney I said Hello 
+
+| Say Hello Splitting Test Data Lines
+| | Send a message  
+| | ... | Robot
+| | ... | Hello, World
   
-Say Hello with a Post-Argument
-  Say Hello  Fred
-
-Say Hello with Embedded Arguments
-  Tell Barney I said Hello 
-
-Say Hello Splitting Test Data Lines
-  Say Something  
-  ...  Robot
-  ...  Hello, World
-  
-Say Hello to a Crowd
-  Greet  Fred  Wilma  Pebbles  Barney  Betty  BamBam  
+| Say Hello to a Crowd
+| | Greet | Fred | Wilma | Pebbles | Barney | Betty | BamBam  
 
   
 *** Keywords ***
+| Say Hello 
+| | [Arguments] | ${addressee}
+| | Log | Hello, ${addressee}
 
-Say Hello  [Arguments]  ${addressee}
-  Log  Hello, ${addressee}
+| Greet 
+| | [Arguments] | @{crowd}
+| | :FOR | ${person} | in | @{crowd}
+| | | Say Hello | ${person}
 
-Greet  [Arguments]  @{crowd}
-    :FOR  ${person}  in  @{crowd}
-    \    Say Hello  ${person}
-
-Tell ${addressee} I said Hello
-  Log  Hello, ${addressee}
+| Tell ${addressee} I said Hello
+| | Log | Hello, ${addressee}
   
-Say Something  [Arguments]  ${addressee}  ${message} 
-  Log  Message To: ${addressee}
-  Log  Message Body: ${message}          
+| Send a message 
+| | [Arguments] | ${addressee} | ${message} 
+| | Log | Message To: ${addressee}
+| | Log | Message Body: ${message}          

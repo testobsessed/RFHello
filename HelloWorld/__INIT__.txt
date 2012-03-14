@@ -1,3 +1,0 @@
-*** Settings ***
-Suite Setup     Log  Setup from INIT file
-Suite Teardown  Log  Teardown from INIT file

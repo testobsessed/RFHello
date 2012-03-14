@@ -1,0 +1,16 @@
+*** Settings ***
+| Force Tags | forced
+
+*** Test Cases ***
+
+| A test tagged as hello and smoke
+| | [Tags] | hello | smoke
+| | Log    | Tagged as hello and smoke
+
+| A test tagged as just hello
+| | [Tags] | hello
+| | Log    | Tagged as hello
+
+| A test tagged as just smoke
+| | [Tags] | smoke
+| | Log    | Tagged as smoke
