@@ -1,3 +1,4 @@
 tell application "Safari"
-    make new document with properties {URL:"file:///Users/esh/Desktop/Code/RFHello033012/report.html"}
+    make new document with properties {URL:"file:///Users/esh/Documents/clients/voltage/RFHello/report.html"}
+    activate
 end tell
