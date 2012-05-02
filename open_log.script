@@ -1,0 +1,3 @@
+tell application "Safari"
+    make new document with properties {URL:"file:///Users/esh/Desktop/Code/RFHello033012/report.html"}
+end tell
